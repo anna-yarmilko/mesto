@@ -1,0 +1,17 @@
+.element__like {
+    width: 22px;
+    height: 19px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.element__like:hover {
+    opacity: 0.6;
+    transition: .3s;
+}
+
+.element__like:active {
+    fill: #000;
+}
