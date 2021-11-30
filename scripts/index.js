@@ -1,7 +1,6 @@
-let editLink = document.querySelector(".button-edit");
+let editLink = document.querySelector(".profile__button-edit");
 let popup = document.querySelector(".popup");
 let popupCloseButton = popup.querySelector(".popup__close");
-let popupOverlay = popup.querySelector(".popup__overlay");
 let formElement = document.querySelector(".popup__content");
 let nameInput = document.querySelector(".popup__input_type_name");
 let descriptionInput = document.querySelector(".popup__input_type_description");
@@ -30,5 +29,4 @@ function formSubmitHandler (evt) {
 
 editLink.addEventListener('click', open);
 popupCloseButton.addEventListener('click', close);
-popupOverlay.addEventListener('click', close);
 formElement.addEventListener('submit', formSubmitHandler);

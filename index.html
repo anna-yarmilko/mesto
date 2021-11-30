@@ -13,7 +13,6 @@
     <div class="page"> 
         <header class="header">
             <img class="logo" src="images/logo.svg" alt="логотип">
-            <hr class="line">
         </header>
 
         <main class="content">
@@ -22,14 +21,10 @@
                 <img class="profile__avatar" src="images/avatar.jpg" alt="жак-ив кусто">
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="button-edit button-edit_type_edit" type="button">
-                        <img src="images/edit-button.svg" alt="редактировать">
-                    </button>
+                    <button class="profile__button-edit" type="button"></button>
                 </div>
                 <p class="profile__description">Исследователь океана</p>
-                <button class="button-add">
-                    <img src="images/add.svg" alt="добавить">
-                </button>
+                <button class="profile__button-add" type="button"></button>
             </section>
 
             <section class="elements">
@@ -37,9 +32,7 @@
                     <img class="element__image" src="images/altay.jpg" alt="алтай">
                     <div class="element__info">
                         <h2 class="element__title">Алтай</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
                 
@@ -47,9 +40,7 @@
                     <img class="element__image" src="images/dombay.jpg" alt="домбай">
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
                 
@@ -57,9 +48,7 @@
                     <img class="element__image" src="images/kamchatka.jpg" alt="камчатка">
                     <div class="element__info">
                         <h2 class="element__title">Камчатский край</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
                 
@@ -67,9 +56,7 @@
                     <img class="element__image" src="images/kavkaz.jpg" alt="кавказ">
                     <div class="element__info">
                         <h2 class="element__title">Кавказ</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
                 
@@ -77,9 +64,7 @@
                     <img class="element__image" src="images/baikal.jpg" alt="байкал">
                     <div class="element__info">
                         <h2 class="element__title">Байкал</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
                 
@@ -87,24 +72,21 @@
                     <img class="element__image" src="images/kuchi-balik.jpg" alt="кичи-балык">
                     <div class="element__info">
                         <h2 class="element__title">Кичи-Балык</h2>
-                        <button class="element__like" type="button">
-                            <img src="images/heart-icon.svg" alt="нравится">
-                        </button>
+                        <button class="element__like" type="button"></button>
                     </div>
                 </article>
             </section> 
         </main>
         
         <section class="popup">
-            <div class="popup__overlay"></div>
-            <form class="popup__content">
+            <form class="popup__content" name="edit-profile">
                 <button class="popup__close" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <fieldset class="popup__fields">
                     <input class="popup__input popup__input_type_name" type="text" value="Жак-Ив Кусто" name="name">
                     <input class="popup__input popup__input_type_description" type="text" value="Исследователь океана" name="description">
                 </fieldset>
-                <button class="popup__button popup__button_type_save">Сохранить</button>
+                <button class="popup__button">Сохранить</button>
             </form>
         </section>
         

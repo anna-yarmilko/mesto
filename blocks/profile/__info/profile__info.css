@@ -3,6 +3,8 @@
     grid-area: profile__info;
     justify-self: flex-start;
     align-self: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
