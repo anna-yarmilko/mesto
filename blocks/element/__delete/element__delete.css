@@ -1,0 +1,21 @@
+.element__delete {
+    background: url(../../../images/trash-icon.svg);
+    width: 18px;
+    height: 19px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.element__delete:hover {
+    transition: .4s ease-in-out;
+    filter: invert(100%) sepia(40%) saturate(1557%) hue-rotate(288deg) brightness(127%) contrast(80%);
+    opacity: 0.6;
+}
+
+.element__delete:active {
+    fill: #000;
+}

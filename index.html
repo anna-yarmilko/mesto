@@ -28,59 +28,22 @@
             </section>
 
             <section class="elements">
-                <article class="element">
-                    <img class="element__image" src="images/altay.jpg" alt="алтай">
-                    <div class="element__info">
-                        <h2 class="element__title">Алтай</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-                
-                <article class="element">
-                    <img class="element__image" src="images/dombay.jpg" alt="домбай">
-                    <div class="element__info">
-                        <h2 class="element__title">Домбай</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-                
-                <article class="element">
-                    <img class="element__image" src="images/kamchatka.jpg" alt="камчатка">
-                    <div class="element__info">
-                        <h2 class="element__title">Камчатский край</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-                
-                <article class="element">
-                    <img class="element__image" src="images/kavkaz.jpg" alt="кавказ">
-                    <div class="element__info">
-                        <h2 class="element__title">Кавказ</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-                
-                <article class="element">
-                    <img class="element__image" src="images/baikal.jpg" alt="байкал">
-                    <div class="element__info">
-                        <h2 class="element__title">Байкал</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
-                
-                <article class="element">
-                    <img class="element__image" src="images/kuchi-balik.jpg" alt="кичи-балык">
-                    <div class="element__info">
-                        <h2 class="element__title">Кичи-Балык</h2>
-                        <button class="element__like" type="button"></button>
-                    </div>
-                </article>
+                <template class="card-template">
+                    <article class="element">
+                        <button class="element__delete" type="button"></button>
+                        <img class="element__image" src="" alt="">
+                        <div class="element__info">
+                            <h2 class="element__title"></h2>
+                            <button class="element__like" type="button"></button>
+                        </div>
+                    </article>
+                </template>
             </section> 
         </main>
         
-        <section class="popup">
+        <section class="popup" id="profile">
             <form class="popup__content" name="edit-profile">
-                <button class="popup__close" type="button"></button>
+                <button class="popup__close" type="button" id="close-edit-profile"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <fieldset class="popup__fields">
                     <input class="popup__input popup__input_type_name" type="text" value="Жак-Ив Кусто" name="name">
@@ -89,11 +52,32 @@
                 <button class="popup__button" type="submit">Сохранить</button>
             </form>
         </section>
+
+        <section class="popup" id="place">
+            <form class="popup__content" name="add-place">
+                <button class="popup__close" type="button" id="close-add-place"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <fieldset class="popup__fields">
+                    <input class="popup__input popup__input_type_place" type="text" placeholder="Название" name="name">
+                    <input class="popup__input popup__input_type_link" type="text" placeholder="Ссылка на картинку" name="description">
+                </fieldset>
+                <button class="popup__button popup__button_type_create" type="submit">Создать</button>
+            </form>
+        </section>
+
+        <section class="popup" id="image">
+            <form class="popup__image" name="image-enlarge">
+                <button class="popup__close" type="button" id="close-image"></button>
+                <img class="popup__image-large" src="" alt="">
+                <p class="popup__subtitle"></p>
+            </form>
+        </section>
         
         <footer class="footer">
             <p class="footer__copyright">© 2021 Mesto Russia</p>
         </footer>
     </div>
+
     <script src="./scripts/index.js"></script>
 </body>
 </html>    

@@ -7,6 +7,8 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
+    transition: visibility 0s, opacity 0.8s ease;
+    box-sizing: border-box;
 }
 
 .popup__close:hover {
