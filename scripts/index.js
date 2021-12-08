@@ -39,11 +39,12 @@ const imagePopup = document.getElementById('image');
 const imageLarge = document.querySelector('.popup__image-large');
 const imageSubtitle = document.querySelector('.popup__subtitle');
 const placePopup = document.getElementById('place');
-const formElement = document.getElementById('profile-form');
+const formProfile = document.getElementById('profile-form');
 const nameInput = document.querySelector(".popup__input_type_name");
 const descriptionInput = document.querySelector(".popup__input_type_description");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const formPlace = document.getElementById('place-form');
 
 function render() {
     const html = initialCards
@@ -126,6 +127,6 @@ addLink.addEventListener('click', () => openPopup(placePopup));
 closeEditPopup.addEventListener('click', () => closePopup(profilePopup));
 closeAddPopup.addEventListener('click', () => closePopup(placePopup));
 closeImagePopup.addEventListener('click', () => closePopup(imagePopup));
-formElement.addEventListener('submit', handleFormSubmit);
-placePopup.addEventListener('submit', handleCardSubmit);
+formProfile.addEventListener('submit', handleFormSubmit);
+formPlace.addEventListener('submit', handleCardSubmit);
 render();
