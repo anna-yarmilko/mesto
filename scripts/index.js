@@ -45,6 +45,9 @@ const descriptionInput = document.querySelector(".popup__input_type_description"
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const formPlace = document.getElementById('place-form');
+const placeOverlay = document.getElementById('overlay-place');
+const imageOverlay = document.getElementById('overlay-image');
+const profileOverlay = document.getElementById('overlay-profile');
 
 function render() {
     const html = initialCards
@@ -87,12 +90,20 @@ function getCard(item) {
 }
 
 function openPopup(evt) {
-    evt.classList.add('popup_opened');
+    evt.classList.add('popup_opened');   
 }
 
 function closePopup(evt) {
     evt.classList.remove('popup_opened');
 }
+
+ document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape') {
+    closePopup(profilePopup);
+    closePopup(imagePopup);
+    closePopup(placePopup);
+  }
+});
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); 
@@ -129,4 +140,7 @@ closeAddPopup.addEventListener('click', () => closePopup(placePopup));
 closeImagePopup.addEventListener('click', () => closePopup(imagePopup));
 formProfile.addEventListener('submit', handleFormSubmit);
 formPlace.addEventListener('submit', handleCardSubmit);
+profileOverlay.addEventListener('click', () => closePopup(profilePopup));
+imageOverlay.addEventListener('click', () => closePopup(imagePopup));
+placeOverlay.addEventListener('click', () => closePopup(placePopup));
 render();
