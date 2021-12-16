@@ -48,6 +48,7 @@ const formPlace = document.getElementById('place-form');
 const placeOverlay = document.getElementById('overlay-place');
 const imageOverlay = document.getElementById('overlay-image');
 const profileOverlay = document.getElementById('overlay-profile');
+const placeSaveButton = document.querySelector('.popup__button_type_create');
 
 function render() {
     const html = initialCards
@@ -90,22 +91,23 @@ function getCard(item) {
 }
 
 function openPopup(evt) {
-    evt.classList.add('popup_opened');   
+    evt.classList.add('popup_opened');
+    document.addEventListener('keydown', closeByEscape);
 }
 
 function closePopup(evt) {
     evt.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeByEscape);
 }
 
- document.addEventListener('keydown', (evt) => {
+function closeByEscape(evt) {
   if (evt.key === 'Escape') {
-    closePopup(profilePopup);
-    closePopup(imagePopup);
-    closePopup(placePopup);
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
   }
-});
+}
 
-function handleFormSubmit (evt) {
+function handleProfileFormSubmit (evt) {
     evt.preventDefault(); 
 
     profileName.textContent = nameInput.value;
@@ -123,8 +125,9 @@ function handleCardSubmit (evt) {
         link: inputImage
     });
     cardContainer.prepend(newPlace);
-    place.value = '';
-    link.value = '';
+    formPlace.reset();
+    placeSaveButton.classList.add('popup__button_disabled');
+    placeSaveButton.setAttribute('disabled', true);
     closePopup(placePopup);
 }
 
@@ -135,11 +138,11 @@ editLink.addEventListener('click', () => {
 });
 
 addLink.addEventListener('click', () => openPopup(placePopup));
+formProfile.addEventListener('submit', handleProfileFormSubmit);
+formPlace.addEventListener('submit', handleCardSubmit);
 closeEditPopup.addEventListener('click', () => closePopup(profilePopup));
 closeAddPopup.addEventListener('click', () => closePopup(placePopup));
 closeImagePopup.addEventListener('click', () => closePopup(imagePopup));
-formProfile.addEventListener('submit', handleFormSubmit);
-formPlace.addEventListener('submit', handleCardSubmit);
 profileOverlay.addEventListener('click', () => closePopup(profilePopup));
 imageOverlay.addEventListener('click', () => closePopup(imagePopup));
 placeOverlay.addEventListener('click', () => closePopup(placePopup));
